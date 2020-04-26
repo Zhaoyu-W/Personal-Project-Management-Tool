@@ -9,13 +9,14 @@ import java.util.Date;
 
 @Entity
 public class Project {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Project name is required")
     private String projectName;
-    @NotBlank(message = "Project identifier is required")
-    @Size(min = 4, max = 5, message = "Please use 4 to 5 characters")
+    @NotBlank(message ="Project Identifier is required")
+    @Size(min=4, max=5, message = "Please use 4 to 5 characters")
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
     @NotBlank(message = "Project description is required")
@@ -24,9 +25,8 @@ public class Project {
     private Date start_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date end_date;
-
     @JsonFormat(pattern = "yyyy-mm-dd")
-    private Date create_At;
+    private Date created_At;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_At;
 
@@ -81,12 +81,12 @@ public class Project {
         this.end_date = end_date;
     }
 
-    public Date getCreate_At() {
-        return create_At;
+    public Date getCreated_At() {
+        return created_At;
     }
 
-    public void setCreate_At(Date create_At) {
-        this.create_At = create_At;
+    public void setCreated_At(Date created_At) {
+        this.created_At = created_At;
     }
 
     public Date getUpdated_At() {
@@ -98,12 +98,12 @@ public class Project {
     }
 
     @PrePersist
-    protected void onCreate() {
-        this.create_At = new Date();
+    protected void onCreate(){
+        this.created_At = new Date();
     }
 
     @PreUpdate
-    protected void onUpdate() {
+    protected void onUpdate(){
         this.updated_At = new Date();
     }
 
