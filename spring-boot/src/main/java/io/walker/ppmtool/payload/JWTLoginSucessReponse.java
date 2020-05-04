@@ -1,10 +1,10 @@
 package io.walker.ppmtool.payload;
 
-public class JWTLoginSuccessResponse {
+public class JWTLoginSucessReponse {
     private boolean success;
     private String token;
 
-    public JWTLoginSuccessResponse(boolean success, String token) {
+    public JWTLoginSucessReponse(boolean success, String token) {
         this.success = success;
         this.token = token;
     }
@@ -27,7 +27,7 @@ public class JWTLoginSuccessResponse {
 
     @Override
     public String toString() {
-        return "JWTLoginSuccessResponse{" +
+        return "JWTLoginSucessReponse{" +
                 "success=" + success +
                 ", token='" + token + '\'' +
                 '}';

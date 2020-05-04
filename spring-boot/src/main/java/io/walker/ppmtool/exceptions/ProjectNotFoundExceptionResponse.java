@@ -1,6 +1,7 @@
 package io.walker.ppmtool.exceptions;
 
 public class ProjectNotFoundExceptionResponse {
+
     private String ProjectNotFound;
 
     public ProjectNotFoundExceptionResponse(String projectNotFound) {
